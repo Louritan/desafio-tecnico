@@ -1,5 +1,6 @@
 ﻿using StudentManagement.Communication.Requests;
 using StudentManagement.Communication.Responses;
+using StudentManagement.Exception.ExceptionsBase;
 
 namespace StudentManagement.Application.UseCases.Student.Register
 {
@@ -13,13 +14,13 @@ namespace StudentManagement.Application.UseCases.Student.Register
 
         private void Validate(RequestRegisterStudentJson request)
         {
-            var nameIsEmpty = string.IsNullOrWhiteSpace(request.Name);
-
-            if (nameIsEmpty)
-                throw new ArgumentException("Name is required!");
-
-            if (request.Age <= 0)
-                throw new ArgumentException("Age must be greater than zero!");
+            var validator = new RegisterStudentValidator();
+            var result = validator.Validate(request);
+            if (!result.IsValid)
+            {
+                var errorMessages = result.Errors.Select(f => f.ErrorMessage).ToList();
+                throw new ErrorOnValidationException(errorMessages);
+            }
         }
     }
 }
