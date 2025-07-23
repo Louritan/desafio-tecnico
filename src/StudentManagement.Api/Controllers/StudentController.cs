@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using StudentManagement.Application.UseCases.Student.Register;
+using StudentManagement.Application.UseCases.Students.Register;
 using StudentManagement.Communication.Requests;
 
 namespace StudentManagement.Api.Controllers
@@ -9,9 +9,11 @@ namespace StudentManagement.Api.Controllers
     public class StudentController : ControllerBase
     {
         [HttpPost]
-        public IActionResult Register([FromBody] RequestRegisterStudentJson request)
+        public IActionResult Register(
+            [FromServices] IRegisterStudentUseCase useCase,
+            [FromBody] RequestRegisterStudentJson request
+        )
         {
-            var useCase = new RegisterStudentUseCase();
             var response = useCase.Execute(request);
             return Created(string.Empty, response);
         }

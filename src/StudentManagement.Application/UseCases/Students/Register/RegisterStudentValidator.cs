@@ -2,7 +2,7 @@
 using StudentManagement.Communication.Requests;
 using StudentManagement.Exception;
 
-namespace StudentManagement.Application.UseCases.Student.Register
+namespace StudentManagement.Application.UseCases.Students.Register
 {
     public class RegisterStudentValidator : AbstractValidator<RequestRegisterStudentJson>
     {
