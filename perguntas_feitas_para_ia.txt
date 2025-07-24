@@ -1,0 +1,45 @@
+Este arquivo contém as perguntas feitas à Inteligência Artificial (IA) durante o desenvolvimento do desafio, bem como as respostas obtidas e os aprendizados resultantes.
+
+1. O nome da solução deve ser maiúsculo?
+A IA me ajudou a verificar qual a convenção utilizada para nomes de soluções em .NET.
+Aprendizado: É comum usar PascalCase (com iniciais maiúsculas) para nomear a solução, como StudentManagement.
+
+2. Devo nomear meu controller StudentController ou StudentsController em .NET?
+A IA me ajudou a entender a convenção recomendada.
+Aprendizado: É comum usar o nome no singular (StudentController) para refletir o recurso da API RESTful.
+
+3. Posso deixar o meu docker-compose.yml na raiz do projeto?
+A IA me orientou sobre a melhor prática.
+Aprendizado: É comum deixar o docker-compose.yml na raiz para facilitar o uso com ferramentas de orquestração e facilitar comandos como docker-compose up.
+
+4. Como posso nomear minha solução? É para ser o backend em C# de um desafio técnico.
+A IA me deu sugestões de nomes significativos.
+Aprendizado: Usei o padrão NomeDoProjeto.Api ou StudentManagement para indicar claramente o propósito da aplicação.
+
+5. O que coloco no .gitignore desse projeto?
+A IA me ajudou a gerar um arquivo .gitignore completo para projetos .NET.
+Aprendizado: Adicionei pastas como bin/, obj/, .vs/, arquivos temporários e configurações específicas do usuário.
+
+6. Quais pacotes NuGet preciso instalar para usar PostgreSQL com Entity Framework?
+A IA listou os pacotes necessários.
+Aprendizado: Instalei Npgsql.EntityFrameworkCore.PostgreSQL para integração entre EF Core e PostgreSQL.
+
+7. Levando em consideração que o StudentId é not null, o campo Student ainda precisa ser nullable (Student?)?
+A IA me ajudou a entender a necessidade do uso de ? no relacionamento.
+Aprendizado: Mesmo com o StudentId obrigatório, a propriedade de navegação Student pode ser nullable para evitar problemas de carregamento e serialização.
+
+8. Como seria o nome “EstudanteNotas” em inglês?
+A IA me ajudou na tradução apropriada.
+Aprendizado: Usei StudentGrades para manter consistência e clareza no idioma padrão do código (inglês).
+
+9. Erro: System.IO.FileNotFoundException ao usar Entity Framework
+A IA me ajudou a diagnosticar e corrigir o erro.
+Aprendizado: Adicionei corretamente o pacote NuGet da versão esperada e garanti que ele estivesse referenciado no projeto.
+
+10. Onde colocar o Use Case para buscar as notas de um estudante por ID?
+A IA me ajudou a entender a organização da arquitetura.
+Aprendizado: Coloquei o Use Case na camada de aplicação (Application/UseCases) como uma classe separada responsável pela lógica de busca das notas, mantendo a arquitetura limpa e separada por responsabilidade.
+
+11. Requisição cross-origin bloqueada: A diretiva Same Origin não permite leitura de recurso remoto. Código de status: 405.
+A IA me ajudou a entender e resolver o problema de CORS no backend .NET.
+Aprendizado: Adicionei corretamente a configuração de CORS com builder.Services.AddCors e app.UseCors permitindo a origem do frontend Angular
