@@ -4,13 +4,15 @@ Uma API RESTful para gerenciamento de estudantes e suas notas, desenvolvida como
 
 ## 📋 Visão Geral
 
-Este projeto é uma API backend que permite o cadastro e gerenciamento de estudantes e suas notas em diferentes disciplinas. A API foi construída utilizando .NET 6 com arquitetura limpa (Clean Architecture) e seguindo os princípios de SOLID.
+Este projeto é uma API backend que permite o cadastro e gerenciamento de estudantes e suas notas em diferentes disciplinas. A API foi construída utilizando .NET 8 com arquitetura limpa (Clean Architecture) e seguindo os princípios de SOLID.
 
 ## 🚀 Tecnologias Utilizadas
 
-- .NET 6
+- .NET 8
 - ASP.NET Core Web API
 - Entity Framework Core
+- PostgreSQL 13.1 (containerizado via Docker)
+- Docker para infraestrutura
 - Swagger para documentação
 - Validação Fluente
 - Padrão Repository e Unit of Work
@@ -40,8 +42,8 @@ O projeto segue a arquitetura Clean Architecture com as seguintes camadas:
 
 ## 🛠️ Requisitos para Execução
 
-- .NET 6 SDK ou superior
-- SQL Server (ou outro banco de dados compatível com Entity Framework Core)
+- .NET 8 SDK ou superior
+- PostgreSQL 13.1 ou superior
 - Visual Studio 2022, Visual Studio Code ou qualquer IDE com suporte a .NET
 
 ## ⚙️ Como Executar
@@ -57,21 +59,29 @@ O projeto segue a arquitetura Clean Architecture com as seguintes camadas:
    dotnet restore
    ```
 
-3. **Configure a conexão com o banco de dados**
+3. **Configure o banco de dados PostgreSQL**
    
-   Edite o arquivo `appsettings.json` na pasta StudentManagement.Api para configurar a string de conexão.
-
-4. **Execute as migrações**
+   É necessário configurar um banco de dados PostgreSQL para executar a aplicação. Você pode usar uma instalação existente ou configurar uma nova.
+   
+   **Opção recomendada:** O projeto inclui um arquivo `docker-compose.yml` que facilita a configuração do PostgreSQL:
    ```
-   dotnet ef database update --project src/StudentManagement.Infrastructure --startup-project src/StudentManagement.Api
+   docker compose up -d
    ```
 
-5. **Execute o projeto**
+4. **Configure a conexão com o banco de dados**
+   
+   Edite o arquivo `appsettings.json` na pasta StudentManagement.Api para configurar a string de conexão conforme as configurações acima.
+
+5. **Execute as migrações**
+   
+   Execute os scripts sql students.sql e student-grades.sql localizados na raíz do projeto
+
+6. **Execute o projeto**
    ```
    dotnet run --project src/StudentManagement.Api
    ```
 
-6. **Acesse a documentação da API**
+7. **Acesse a documentação da API**
    
    Abra o navegador e acesse `https://localhost:7001/swagger` (a porta pode variar)
 
@@ -101,18 +111,6 @@ O projeto segue a arquitetura Clean Architecture com as seguintes camadas:
     "grade": 9.5
   }
   ```
-
-## 🧪 Testes
-
-Para executar os testes:
-
-```
-dotnet test
-```
-
-## 📝 Licença
-
-Este projeto está sob a licença [MIT](LICENSE).
 
 ## 👨‍💻 Autor
 
