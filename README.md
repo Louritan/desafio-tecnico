@@ -84,6 +84,8 @@ O projeto segue a arquitetura Clean Architecture com as seguintes camadas:
 7. **Acesse a documentação da API**
    
    Abra o navegador e acesse `https://localhost:7001/swagger` (a porta pode variar)
+   
+   ![Swagger](./assets/swagger.jpg)
 
 ## 📡 Endpoints da API
 
@@ -96,10 +98,13 @@ O projeto segue a arquitetura Clean Architecture com as seguintes camadas:
     "age": 18
   }
   ```
+  ![Post Student](./assets/post-student.jpg)
 
 - **GET /api/student**: Lista todos os estudantes
+  ![Get Students](./assets/get-students.jpg)
 
 - **GET /api/student/{id}**: Busca as notas de um estudante específico
+  ![Get Student Grades](./assets/get-student-grades.jpg)
 
 ### Notas
 
@@ -111,6 +116,8 @@ O projeto segue a arquitetura Clean Architecture com as seguintes camadas:
     "grade": 9.5
   }
   ```
+  ![Post Student Grade Success](./assets/post-student-grade-success.jpg)
+  ![Post Student Grade Validation](./assets/post-student-grade-validating.jpg)
 
 ## 👨‍💻 Autor
 
