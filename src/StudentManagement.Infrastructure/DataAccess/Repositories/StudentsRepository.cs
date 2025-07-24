@@ -16,5 +16,15 @@ namespace StudentManagement.Infrastructure.DataAccess.Repositories
         {
             _dbContext.Students.Add(student);
         }
+
+        public List<Student> GetAll()
+        {
+            return _dbContext.Students.ToList();
+        }
+
+        public List<StudentGrade> GetStudentGrades(int studentId)
+        {
+            return _dbContext.StudentGrades.Where(x => x.StudentId == studentId).ToList();
+        }
     }
 }

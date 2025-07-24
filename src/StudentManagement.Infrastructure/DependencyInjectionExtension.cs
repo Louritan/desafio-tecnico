@@ -20,6 +20,7 @@ namespace StudentManagement.Infrastructure
         {
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IStudentsRepository, StudentsRepository>();
+            services.AddScoped<IStudentGradesRepository, StudentGradesRepository>();
         }
 
         private static void AddDbContext(IServiceCollection services, IConfiguration configuration)

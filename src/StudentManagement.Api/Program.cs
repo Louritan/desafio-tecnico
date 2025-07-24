@@ -4,10 +4,19 @@ using StudentManagement.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+    });
+});
+
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddRouting(options => options.LowercaseUrls = true);
 builder.Services.AddMvc(options => options.Filters.Add(typeof(ExceptionFilter)));
 
 builder.Services.AddInfrastructure(builder.Configuration);
@@ -22,6 +31,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors();
 
 app.UseAuthorization();
 

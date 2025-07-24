@@ -1,11 +1,9 @@
-﻿namespace StudentManagement.Domain.Entities
+﻿namespace StudentManagement.Communication.DTOs
 {
-    public class Student
+    public class StudentDTO
     {
         public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
         public int Age { get; set; }
-
-        public List<StudentGrade> Grades { get; set; } = new();
     }
 }

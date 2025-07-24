@@ -30,7 +30,11 @@ namespace StudentManagement.Application.UseCases.Students.Register
 
             _repository.Add(entity);
             _unitOfWork.Commit();
-            return new ResponseRegisteredStudentJson();
+
+            return new ResponseRegisteredStudentJson
+            {
+                Id = entity.Id
+            };
         }
 
         private void Validate(RequestRegisterStudentJson request)

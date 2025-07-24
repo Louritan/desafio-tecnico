@@ -70,11 +70,38 @@ namespace StudentManagement.Exception {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Grade must be between 0 and 10!.
+        /// </summary>
+        public static string GRADE_OUT_OF_RANGE_ERROR {
+            get {
+                return ResourceManager.GetString("GRADE_OUT_OF_RANGE_ERROR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Name is required!.
         /// </summary>
         public static string NAME_REQUIRED_ERROR {
             get {
                 return ResourceManager.GetString("NAME_REQUIRED_ERROR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a StudentId cannot be null!.
+        /// </summary>
+        public static string STUDENT_ID_REQUIRED_ERROR {
+            get {
+                return ResourceManager.GetString("STUDENT_ID_REQUIRED_ERROR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Subject is required!.
+        /// </summary>
+        public static string SUBJECT_REQUIRED_ERROR {
+            get {
+                return ResourceManager.GetString("SUBJECT_REQUIRED_ERROR", resourceCulture);
             }
         }
         

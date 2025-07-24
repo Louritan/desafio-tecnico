@@ -8,5 +8,6 @@ namespace StudentManagement.Infrastructure.DataAccess
         public StudentManagementDbContext(DbContextOptions options) : base(options) { }
 
         public DbSet<Student> Students { get; set; }
+        public DbSet<StudentGrade> StudentGrades { get; set; }
     }
 }

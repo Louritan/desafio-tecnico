@@ -120,8 +120,17 @@
   <data name="AGE_MUST_BE_GRATER_THAN_ZERO_ERROR" xml:space="preserve">
     <value>Age must be greater than zero!</value>
   </data>
+  <data name="GRADE_OUT_OF_RANGE_ERROR" xml:space="preserve">
+    <value>Grade must be between 0 and 10!</value>
+  </data>
   <data name="NAME_REQUIRED_ERROR" xml:space="preserve">
     <value>Name is required!</value>
+  </data>
+  <data name="STUDENT_ID_REQUIRED_ERROR" xml:space="preserve">
+    <value>StudentId cannot be null!</value>
+  </data>
+  <data name="SUBJECT_REQUIRED_ERROR" xml:space="preserve">
+    <value>Subject is required!</value>
   </data>
   <data name="UNKNOWN_ERROR" xml:space="preserve">
     <value>Unknown error</value>
